@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de Sesion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        .carta {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 560px;
+            padding: 32px 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            box-sizing: border-box;
+        }
+        h1 {
+            margin-top: 0;
+            margin-bottom: 28px;
+            color: #222222;
+        }
+        .campo {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555555;
+            font-size: 16px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 12px;
+            font-size: 16px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+        .btn {
+            margin-top: 8px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 22px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .mensaje {
+            margin-top: 24px;
+            padding: 12px 16px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            color: #222222;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="carta">
+        <h1>Inicio de sesión</h1>
+
+        <form action="/ejercicio2" method="POST">
+            <div class="campo">
+                <label for="nombre">Ingresa tu nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="campo">
+                <label for="contrasena">Ingresa tu contraseña</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+            </div>
+
+            <button type="submit">Verificar</button>
+        </form>
+
+        {% if mensaje %}
+            <div class="mensaje">
+                <p>{{ mensaje }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
